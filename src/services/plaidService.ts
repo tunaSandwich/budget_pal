@@ -1,22 +1,26 @@
-import { CountryCode, Products } from 'plaid';
+import { CountryCode, Products, LinkTokenCreateRequest } from 'plaid';
 import { plaidClient } from '../config/plaid.js';
 import { logger } from '../utils/logger';
 
 export class PlaidService {
   async createLinkToken(userId: string): Promise<string> {
     try {
-      const request = {
+      const request: LinkTokenCreateRequest = {
         user: { client_user_id: userId },
         client_name: 'Spending Tracker',
         products: ['transactions', 'auth'] as Products[],
         country_codes: ['US'] as CountryCode[],
         language: 'en',
       };
+      if (process.env.PLAID_REDIRECT_URI) {
+        request.redirect_uri = process.env.PLAID_REDIRECT_URI;
+      }
 
       const response = await plaidClient.linkTokenCreate(request);
       return response.data.link_token;
     } catch (error) {
-      logger.error('Error creating link token:', error);
+      const details = (error as any)?.response?.data ?? error;
+      logger.error('Error creating link token:', details);
       throw error;
     }
   }
@@ -26,7 +30,8 @@ export class PlaidService {
       const response = await plaidClient.itemPublicTokenExchange({ public_token: publicToken });
       return response.data.access_token;
     } catch (error) {
-      logger.error('Error exchanging public token:', error);
+      const details = (error as any)?.response?.data ?? error;
+      logger.error('Error exchanging public token:', details);
       throw error;
     }
   }
@@ -38,7 +43,8 @@ export class PlaidService {
       });
       return response.data.accounts;
     } catch (error) {
-      logger.error('Error fetching accounts:', error);
+      const details = (error as any)?.response?.data ?? error;
+      logger.error('Error fetching accounts:', details);
       throw error;
     }
   }
@@ -52,7 +58,8 @@ export class PlaidService {
       });
       return response.data.transactions;
     } catch (error) {
-      logger.error('Error fetching transactions:', error);
+      const details = (error as any)?.response?.data ?? error;
+      logger.error('Error fetching transactions:', details);
       throw error;
     }
   }
