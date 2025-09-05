@@ -11,7 +11,8 @@
     "test:transactions": "tsx tests/test-transactions.ts",
     "test:account": "tsx tests/test-account.ts",
     "test:calculations": "node tests/calculations.test.js",
-    "setup": "node scripts/setup.js"
+    "setup": "node scripts/setup.js",
+    "test:whatsapp": "tsx src/test-whatsapp.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
