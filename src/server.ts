@@ -4,6 +4,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import dotenv from 'dotenv';
 import { PlaidService } from './services/plaidService.js';
+import { SchedulerService } from './services/schedulerService.js';
 import { logger } from './utils/logger';
 
 dotenv.config();
@@ -20,6 +21,18 @@ app.use(express.static(publicDir));
 // Simple health endpoint
 app.get('/health', (_req, res) => {
   res.json({ ok: true });
+});
+
+// Trigger the daily job immediately (for live testing)
+app.post('/api/run-now', async (_req, res) => {
+  try {
+    const scheduler = new SchedulerService();
+    await scheduler.runDailyJob();
+    res.json({ ok: true });
+  } catch (error) {
+    logger.error('Failed to run daily job via /api/run-now', error);
+    res.status(500).json({ ok: false, error: 'Failed to execute job' });
+  }
 });
 
 // Create a link token for the client

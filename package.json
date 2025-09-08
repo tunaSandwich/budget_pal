@@ -10,6 +10,8 @@
     "start:server": "tsx src/server.ts",
     "dev:server": "tsx watch src/server.ts",
     "start:now": "tsx src/test-run-daily-now.ts",
+    "run:now:local": "curl -sS -X POST http://localhost:3000/api/run-now",
+    "run:now:remote": "curl -sS -X POST $APP_URL/api/run-now",
     "test:plaid": "tsx tests/test.plaid.ts",
     "test:transactions": "tsx tests/test-transactions.ts",
     "test:account": "tsx tests/test-account.ts",

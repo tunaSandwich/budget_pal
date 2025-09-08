@@ -74,6 +74,17 @@ export class SmsService {
           try {
             const result = await twilioClient.messages.create(payload);
             logger.info('WhatsApp message sent successfully:', result.sid);
+            try {
+              const status = await twilioClient.messages(result.sid).fetch();
+              logger.info('Twilio delivery status', {
+                sid: result.sid,
+                status: status.status,
+                errorCode: (status as any)?.errorCode ?? null,
+                errorMessage: (status as any)?.errorMessage ?? null,
+              });
+            } catch (fetchErr) {
+              logger.warn('Failed to fetch Twilio message status', fetchErr);
+            }
             return result;
           } catch (err: any) {
             lastError = err;
