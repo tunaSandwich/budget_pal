@@ -78,8 +78,17 @@ app.get('/', (_req, res) => {
 
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || '0.0.0.0';
-app.listen(PORT, HOST, () => {
-  logger.info(`Server listening on http://${HOST}:${PORT}`);
+
+// Debug logging
+logger.info('Environment check:', {
+  PORT_env: process.env.PORT,
+  HOST_env: process.env.HOST,
+  PORT_final: PORT,
+  HOST_final: HOST
 });
 
+app.listen(PORT, HOST, () => {
+  logger.info(`Server listening on http://${HOST}:${PORT}`);
+  logger.info(`Railway should connect to this exact port: ${PORT}`);
+});
 
