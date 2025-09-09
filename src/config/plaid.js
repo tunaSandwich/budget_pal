@@ -3,8 +3,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Resolve Plaid environment with a safe default
+const resolvedEnv = (process.env.PLAID_ENV || 'sandbox').toLowerCase();
+const basePath = PlaidEnvironments[resolvedEnv] || PlaidEnvironments.sandbox;
+
 const configuration = new Configuration({
-  basePath: PlaidEnvironments[process.env.PLAID_ENV],
+  basePath,
   baseOptions: {
     headers: {
       'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,

@@ -9,6 +9,13 @@ const scheduler = new SchedulerService();
 
 function start() {
   logger.info('[Main] Budget Pal daemon starting');
+  // Global error handlers for better visibility in Railway logs
+  process.on('unhandledRejection', (reason) => {
+    logger.error('[Process] Unhandled promise rejection', reason as any);
+  });
+  process.on('uncaughtException', (err) => {
+    logger.error('[Process] Uncaught exception', err as any);
+  });
   scheduler.start();
 
   const healthLogIntervalMs = Number(process.env.HEALTH_LOG_INTERVAL_MS || 60_000);
