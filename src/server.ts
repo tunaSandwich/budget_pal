@@ -73,8 +73,9 @@ app.get('/', (_req, res) => {
 });
 
 const PORT = Number(process.env.PORT || 3000);
-app.listen(PORT, () => {
-  logger.info(`Server listening on http://localhost:${PORT}`);
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => {
+  logger.info(`Server listening on http://${HOST}:${PORT}`);
 });
 
 
