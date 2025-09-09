@@ -15,8 +15,8 @@ const plaidService = new PlaidService();
 app.use(cors());
 app.use(express.json());
 
-const publicDir = path.join(process.cwd(), 'src', 'public');
-app.use(express.static(publicDir));
+// const publicDir = path.join(process.cwd(), 'src', 'public');
+// app.use(express.static(publicDir));
 
 // Simple health endpoint
 app.get('/health', (_req, res) => {
@@ -68,8 +68,12 @@ app.post('/api/exchange_public_token', async (req, res) => {
 });
 
 // Serve the Plaid Link page
+// app.get('/', (_req, res) => {
+//   res.sendFile(path.join(publicDir, 'index.html'));
+// });
+
 app.get('/', (_req, res) => {
-  res.sendFile(path.join(publicDir, 'index.html'));
+  res.send('<h1>Budget Pal Test</h1><p>Server is working!</p>');
 });
 
 const PORT = Number(process.env.PORT || 3000);
