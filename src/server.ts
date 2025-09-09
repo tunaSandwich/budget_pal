@@ -24,14 +24,15 @@ app.get('/health', (_req, res) => {
 });
 
 // Trigger the daily job immediately (for live testing)
-app.post('/api/run-now', async (_req, res) => {
+app.post('/api/run-now', (_req, res) => {
   try {
     const scheduler = new SchedulerService();
-    await scheduler.runDailyJob();
-    res.json({ ok: true });
+    // Fire-and-forget to avoid request timeouts at the edge
+    void scheduler.runDailyJob();
+    res.status(202).json({ ok: true, started: true });
   } catch (error) {
-    logger.error('Failed to run daily job via /api/run-now', error);
-    res.status(500).json({ ok: false, error: 'Failed to execute job' });
+    logger.error('Failed to trigger daily job via /api/run-now', error);
+    res.status(500).json({ ok: false, error: 'Failed to trigger job' });
   }
 });
 
