@@ -1,0 +1,290 @@
+Landing Page Prompt
+Create a modern, trust-focused landing page for Budget Pal using the design specification provided. The page should include:
+Header Section:
+
+Clean navigation with Budget Pal logo (use a simple text logo with the primary blue color #0698FE)
+Minimal navigation items: "How it Works", "Security", "Get Started" button
+
+Hero Section:
+
+Compelling headline: "Stay on top of your spending without the hassle"
+Subheadline: "Get daily spending insights sent directly to your phone. No app checking required."
+Primary CTA button: "Get Started Free"
+Hero image or illustration suggesting financial tracking/mobile notifications
+
+Trust & Security Section:
+
+Prominent security messaging: "Bank-grade 256-bit encryption"
+"Powered by Plaid" badge with brief explanation
+"Your data is never stored or sold" messaging
+Security icons (shield, lock, checkmark)
+
+How it Works Section:
+
+3-step process with icons:
+
+"Connect your bank securely"
+"Set your spending goals"
+"Get daily text updates"
+
+
+
+Sample Messages Section:
+
+2-3 realistic sample text messages in iPhone-style bubbles:
+
+"Good morning! You've spent $87 of your $800 weekly budget. You're on track! 📈"
+"Heads up: You're at 75% of your dining budget with 10 days left this month. 🍽️"
+
+
+
+Footer:
+
+Simple links: Privacy Policy, Terms of Service, Contact
+Copyright and company info
+
+Use the design system colors, typography, and spacing. Ensure mobile responsiveness and accessibility. Include subtle animations on scroll for engagement.
+Step 1: Goal Setting Prompt
+Create a clean, focused goal-setting page that represents step 1 of the Budget Pal onboarding flow. The page should include:
+Page Structure:
+
+Progress indicator showing "Step 1 of 4"
+Clear back navigation to landing page
+Single-purpose design focused on one input
+
+Main Content:
+
+Large, friendly headline: "What's your monthly spending goal?"
+Supportive subtext: "This helps us send you relevant spending alerts and keep you on track"
+Large, prominent dollar input field with proper formatting ($1,200 format)
+Input validation for reasonable amounts ($50 - $50,000 range)
+Helper text: "Don't worry, you can always adjust this later"
+
+Visual Elements:
+
+Goal-related icon or illustration (target, chart, or piggy bank)
+Clean card-based layout centered on page
+Subtle background pattern or gradient
+
+Form Behavior:
+
+Auto-focus on the input field
+Real-time formatting as user types (add commas, dollar sign)
+Clear error states for invalid inputs
+Input should be large and touch-friendly
+
+Navigation:
+
+Primary button: "Continue" (disabled until valid input entered)
+Secondary link: "Back to home"
+
+Additional Features:
+
+Quick preset buttons for common amounts: $500, $1,000, $2,000, $5,000
+Tooltip explaining how the goal will be used
+
+Use the established design system with proper spacing, colors, and typography. Ensure form accessibility with proper labels and ARIA attributes.
+Step 2: Bank Connection Prompt
+Create a secure, trust-focused bank connection page for step 2 of Budget Pal onboarding using Plaid integration. The page should include:
+Page Structure:
+
+Progress indicator showing "Step 2 of 4"
+Navigation breadcrumb back to previous step
+Security-first design approach
+
+Main Content:
+
+Clear headline: "Connect your bank account"
+Reassuring subtext: "We use bank-level security to safely connect to your account. We never store your login credentials."
+Prominent Plaid integration button: "Connect with Plaid"
+
+Security Section:
+
+Trust indicators prominently displayed:
+
+"256-bit bank-grade encryption" with lock icon
+"Trusted by millions" with user count
+"Read-only access - we never move money" with shield icon
+Plaid logo and "Powered by Plaid" messaging
+
+
+
+How It Works:
+
+Brief 3-step explanation:
+
+"Choose your bank from 10,000+ supported institutions"
+"Log in through Plaid's secure portal"
+"We'll start tracking your spending automatically"
+
+
+
+Visual Elements:
+
+Bank icons of major institutions (Chase, Bank of America, Wells Fargo, etc.)
+Security badges and trust seals
+Clean, professional layout that builds confidence
+
+Mock Plaid Integration:
+
+Since this is a demo, create a modal that simulates the Plaid Link flow
+Show bank selection interface
+Include success state after "connection"
+
+Navigation:
+
+Primary CTA: "Connect Your Bank" button
+Secondary option: "I'll connect later" (with explanation of limited functionality)
+Back button to previous step
+
+Legal/Privacy:
+
+Small print: "By connecting, you agree to our Privacy Policy and Terms of Service"
+Link to detailed security information
+
+Emphasize security and trust throughout. Use calming colors and professional imagery. Ensure the page addresses common banking security concerns.
+Step 3: SMS Consent Prompt
+Create a compliant, clear SMS consent page for step 3 of Budget Pal onboarding. This page must meet A2P (Application-to-Person) messaging compliance requirements:
+Page Structure:
+
+Progress indicator showing "Step 3 of 4"
+Clear navigation back to previous step
+Focus on consent and transparency
+
+Main Content:
+
+Clear headline: "Get your spending updates via text"
+Explanatory text: "We'll send you daily spending summaries and goal progress updates right to your phone"
+
+Phone Number Input:
+
+Large, prominent phone number field with proper formatting
+Country code selector (default to +1 US)
+Real-time validation and formatting
+Clear error states for invalid numbers
+
+Consent Section (Critical for A2P Compliance):
+
+Large, prominent checkbox (not pre-checked)
+Clear consent language: "I agree to receive automated text messages from Budget Pal at the phone number provided"
+Message frequency disclosure: "Message frequency: 1-2 messages per day, up to 30 per month"
+Rate disclosure: "Message and data rates may apply"
+Opt-out instructions: "Reply STOP to opt out at any time"
+Help instructions: "Reply HELP for help"
+Terms link: "View full Terms and Conditions"
+
+Sample Messages Preview:
+
+Show 2-3 example messages users will receive:
+
+Daily spending summary
+Goal progress alert
+Monthly summary
+
+
+Use iPhone-style message bubbles for realism
+
+Visual Elements:
+
+Phone mockup showing sample messages
+Checkmark icons for key benefits
+Professional, trustworthy design
+
+Compliance Elements:
+
+Clear, unambiguous consent language
+No pre-checked boxes
+Prominent opt-out information
+Links to Terms of Service and Privacy Policy
+
+Navigation:
+
+Primary button: "Start Receiving Updates" (only enabled when phone entered and consent checked)
+Secondary link: "Skip for now" (with limitation explanation)
+Back navigation to previous step
+
+Validation:
+
+Ensure phone number is valid format
+Confirm consent checkbox is checked before allowing continuation
+Show clear error messages for missing requirements
+
+The design should prioritize legal compliance while maintaining user experience. Use trust signals and clear communication about what users can expect.
+Step 4: Confirmation Prompt
+Create a celebratory, informative confirmation page for step 4 (final step) of Budget Pal onboarding. The page should include:
+Page Structure:
+
+Progress indicator showing "Step 4 of 4" or "Complete!"
+No back navigation (process complete)
+Success-focused design theme
+
+Main Content:
+
+Large success icon (checkmark in circle, confetti, or celebration graphic)
+Celebratory headline: "You're all set up!"
+Success message: "Budget Pal is now tracking your spending and will send your first update tomorrow morning."
+
+Setup Summary Card:
+
+Clean summary of user's choices:
+
+Monthly goal: $X,XXX
+Connected bank: [Bank name] (last 4 digits of account)
+Phone number: (XXX) XXX-XXXX
+Text notifications: Enabled
+
+
+
+What Happens Next:
+
+Clear timeline of next steps:
+
+"Tomorrow morning: Your first daily spending summary"
+"Weekly: Progress updates toward your goal"
+"Monthly: Detailed spending breakdown and goal adjustment prompts"
+
+
+
+Quick Actions:
+
+Primary CTA: "View Dashboard" (if you have a dashboard planned)
+Secondary options:
+
+"Update Settings"
+"Invite Friends"
+"Download Mobile Bookmark"
+
+
+
+Support Information:
+
+Contact details: "Questions? Text us at (555) 123-4567 or email support@budgetpal.com"
+FAQ link: "Common questions"
+Help center link
+
+Trust Reinforcement:
+
+Security reminder: "Your data is encrypted and secure"
+Privacy note: "We'll never share your information"
+Unsubscribe reminder: "Reply STOP anytime to unsubscribe"
+
+Visual Elements:
+
+Success-themed colors (use success green #10B981 as accent)
+Positive, upbeat imagery
+Clean card-based layout
+Subtle animation or confetti effect
+
+Additional Features:
+
+Social sharing: "I'm taking control of my spending with Budget Pal!"
+Referral prompt: "Know someone who could benefit? Share Budget Pal"
+Mobile app download (if applicable)
+
+Footer:
+
+Links to support, privacy policy, terms
+Company information
+Social media links
+
+The page should feel rewarding and build excitement about the user's financial journey. Use positive language and imagery throughout. Ensure the user understands what they signed up for and what to expect next.
