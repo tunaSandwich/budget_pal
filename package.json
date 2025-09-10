@@ -17,7 +17,8 @@
     "test:account": "tsx tests/test-account.ts",
     "test:calculations": "node tests/calculations.test.js",
     "setup": "node scripts/setup.js",
-    "test:whatsapp": "tsx src/test-whatsapp.ts"
+    "test:whatsapp": "tsx src/test-whatsapp.ts",
+    "tree": "node scripts/print-tree.js ."
   },
   "dependencies": {
     "cors": "^2.8.5",
