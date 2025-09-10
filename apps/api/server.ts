@@ -3,9 +3,9 @@ import cors from 'cors';
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import dotenv from 'dotenv';
-import { PlaidService } from '../../src/services/plaidService.js';
-import { SchedulerService } from '../../src/services/schedulerService.js';
-import { logger } from '../schedular/utils/logger.js';
+import { PlaidService } from '../../packages/services/plaidService.js';
+import { SchedulerService } from '../../packages/services/schedulerService.js';
+import { logger } from '../../packages/utils/logger.js';
 
 dotenv.config();
 
@@ -57,9 +57,9 @@ app.post('/api/exchange_public_token', async (req, res) => {
       return res.status(400).json({ error: 'public_token is required' });
     }
     const accessToken = await plaidService.exchangePublicToken(publicToken);
-    const storagePath = path.join(process.cwd(), 'src', 'temp_access_token.json');
+    const storagePath = path.join(process.cwd(), 'temp_access_token.json');
     await fs.writeFile(storagePath, JSON.stringify({ access_token: accessToken }, null, 2), 'utf8');
-    logger.info('Stored access token at src/temp_access_token.json');
+    logger.info('Stored access token at temp_access_token.json');
     res.json({ status: 'success' });
   } catch (error) {
     logger.error('Failed to exchange public token', error);

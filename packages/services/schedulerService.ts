@@ -5,7 +5,7 @@ import { format as formatDateFn, startOfMonth, subMonths } from 'date-fns';
 import { PlaidService } from './plaidService.js';
 import { CalculationService, PlaidTransaction } from './calculationService.js';
 import { SmsService } from './smsService.js';
-import { logger } from '../utils/logger';
+import { logger } from '../utils/logger.js';
 
 type ParsedTime = { hours: number; minutes: number };
 
@@ -50,7 +50,7 @@ export class SchedulerService {
     }
     // Fallback to temp file saved by the server's exchange endpoint
     try {
-      const storagePath = path.join(process.cwd(), 'src', 'temp_access_token.json');
+      const storagePath = path.join(process.cwd(), 'temp_access_token.json');
       const raw = await fs.readFile(storagePath, 'utf8');
       const parsed = JSON.parse(raw);
       const token = parsed?.access_token;

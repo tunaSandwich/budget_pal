@@ -3,24 +3,29 @@
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "node",
-    "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@services/*": ["services/*"],
-      "@utils/*": ["utils/*"],
-      "@config/*": ["config/*"],
-      "@logger": ["utils/logger"],
-      "@logger.ts": ["utils/logger"]
+      "@config/*": ["packages/config/*"],
+      "@services/*": ["packages/services/*"],
+      "@utils/*": ["packages/utils/*"],
+      "@logger": ["packages/utils/logger"],
+      "@logger.ts": ["packages/utils/logger"]
     }
   },
-  "include": ["src/**/*", "tests/test.plaid.ts"],
+  "include": [
+    "apps/**/*.ts",
+    "packages/**/*.ts",
+    "packages/**/*.d.ts",
+    "tests/**/*.ts",
+    "tests/**/*.d.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }
+
+

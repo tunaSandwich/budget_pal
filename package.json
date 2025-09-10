@@ -2,14 +2,14 @@
   "name": "budget-pal",
   "version": "1.0.0",
   "description": "Automated daily spending limit SMS tracker with US Bank integration",
-  "main": "src/index.js",
+  "main": "apps/scheduler/index.js",
   "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts",
-    "dev": "tsx watch src/index.ts",
-    "start:server": "tsx src/server.ts",
-    "dev:server": "tsx watch src/server.ts",
-    "start:now": "tsx src/test-run-daily-now.ts",
+    "start": "tsx apps/scheduler/index.ts",
+    "dev": "tsx watch apps/scheduler/index.ts",
+    "start:server": "tsx apps/api/server.ts",
+    "dev:server": "tsx watch apps/api/server.ts",
+    "start:now": "tsx apps/scheduler/tests/test-run-daily-now.ts",
     "run:now:local": "curl -sS -X POST http://localhost:3000/api/run-now",
     "run:now:remote": "curl -sS -X POST $APP_URL/api/run-now",
     "test:plaid": "tsx tests/test.plaid.ts",
@@ -17,7 +17,7 @@
     "test:account": "tsx tests/test-account.ts",
     "test:calculations": "node tests/calculations.test.js",
     "setup": "node scripts/setup.js",
-    "test:whatsapp": "tsx src/test-whatsapp.ts",
+    "test:whatsapp": "tsx apps/scheduler/tests/test-whatsapp.ts",
     "tree": "node scripts/print-tree.js ."
   },
   "dependencies": {
@@ -25,16 +25,16 @@
     "date-fns": "^2.30.0",
     "dotenv": "^16.0.3",
     "express": "^4.19.2",
-    "node-cron": "^3.0.3",
     "plaid": "^11.0.0",
-    "twilio": "^4.19.0",
-    "tsx": "^4.15.7"
+    "twilio": "^4.19.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.23",
     "@types/node": "^24.3.1",
-    "@types/express": "^4.17.21",
-    "@types/cors": "^2.8.17",
+    "node-cron": "^4.2.1",
     "nodemon": "^3.0.2",
+    "tsx": "^4.20.5",
     "typescript": "^5.0.0"
   }
 }

@@ -1,5 +1,5 @@
 import { startOfMonth, endOfMonth, subMonths, isAfter, isBefore, isEqual, differenceInCalendarDays } from 'date-fns';
-import { logger } from '../utils/logger';
+import { logger } from '../utils/logger.js';
 
 export type PlaidTransaction = { date: string; amount: number };
 

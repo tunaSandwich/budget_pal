@@ -1,5 +1,5 @@
-import { twilioClient } from '../../packages/config/twilio.js';
-import { logger } from '../utils/logger';
+import { twilioClient } from '../config/twilio.js';
+import { logger } from '../utils/logger.js';
 
 export class SmsService {
   async sendSpendingUpdate(message: string) {

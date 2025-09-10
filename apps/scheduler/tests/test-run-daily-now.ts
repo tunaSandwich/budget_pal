@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
-import { SchedulerService } from './services/schedulerService.js';
-import { logger } from '../apps/schedular/utils/logger.js';
+import { SchedulerService } from '../../../packages/services/schedulerService.js';
+import { logger } from '../../../packages/utils/logger.js';
 
 dotenv.config();
 

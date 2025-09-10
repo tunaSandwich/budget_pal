@@ -1,6 +1,6 @@
 import { CountryCode, Products, LinkTokenCreateRequest } from 'plaid';
-import { plaidClient } from '../../packages/config/plaid.js';
-import { logger } from '../utils/logger';
+import { plaidClient } from '../config/plaid';
+import { logger } from '../utils/logger.js';
 
 export class PlaidService {
   async createLinkToken(userId: string): Promise<string> {

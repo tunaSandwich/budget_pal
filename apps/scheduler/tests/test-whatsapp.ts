@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
 import fs from 'node:fs/promises';
 import { startOfMonth, endOfMonth, subMonths, formatISO } from 'date-fns';
-import { PlaidService } from './services/plaidService.js';
-import { CalculationService } from './services/calculationService.js';
-import { SmsService } from './services/smsService.js';
-import { logger } from '../apps/schedular/utils/logger.js';
+import { PlaidService } from '../../../packages/services/plaidService.js';
+import { CalculationService } from '../../../packages/services/calculationService.js';
+import { SmsService } from '../../../packages/services/smsService.js';
+import { logger } from '../utils/logger.js';
 
 dotenv.config();
 

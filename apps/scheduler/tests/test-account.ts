@@ -1,13 +1,13 @@
 import fs from 'node:fs/promises';
 import { formatISO, subDays } from 'date-fns';
 import dotenv from 'dotenv';
-import { PlaidService } from '../src/services/plaidService.js';
-import { logger } from '../src/utils/logger.js';
+import { PlaidService } from '../../../packages/services/plaidService.js';
+import { logger } from '../../../packages//utils/logger.js';
 
 dotenv.config();
 
 async function readAccessToken(): Promise<string> {
-  const raw = await fs.readFile('../src/temp_access_token.json', 'utf8');
+  const raw = await fs.readFile('../../../src/temp_access_token.json', 'utf8');
   const json = JSON.parse(raw);
   const token = json?.access_token;
   if (!token) throw new Error('No access_token found. Connect your bank first via http://localhost:3000');
