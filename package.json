@@ -5,8 +5,9 @@
   "main": "apps/scheduler/index.js",
   "type": "module",
   "scripts": {
-    "start": "tsx apps/scheduler/index.ts",
+    "start": "concurrently \"npm run start:server\" \"npm run start:scheduler\"",
     "dev": "tsx watch apps/scheduler/index.ts",
+    "start:schedular": "tsx apps/scheduler/index.ts",
     "start:server": "tsx apps/api/server.ts",
     "dev:server": "tsx watch apps/api/server.ts",
     "start:now": "tsx apps/scheduler/tests/test-run-daily-now.ts",
