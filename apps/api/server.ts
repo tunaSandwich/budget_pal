@@ -3,9 +3,9 @@ import cors from 'cors';
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import dotenv from 'dotenv';
-import { PlaidService } from './services/plaidService.js';
-import { SchedulerService } from './services/schedulerService.js';
-import { logger } from './utils/logger';
+import { PlaidService } from '../../src/services/plaidService.js';
+import { SchedulerService } from '../../src/services/schedulerService.js';
+import { logger } from '../schedular/utils/logger.js';
 
 dotenv.config();
 

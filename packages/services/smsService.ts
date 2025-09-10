@@ -1,4 +1,4 @@
-import { twilioClient } from '../config/twilio.js';
+import { twilioClient } from '../../packages/config/twilio.js';
 import { logger } from '../utils/logger';
 
 export class SmsService {

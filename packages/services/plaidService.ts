@@ -1,5 +1,5 @@
 import { CountryCode, Products, LinkTokenCreateRequest } from 'plaid';
-import { plaidClient } from '../config/plaid.js';
+import { plaidClient } from '../../packages/config/plaid.js';
 import { logger } from '../utils/logger';
 
 export class PlaidService {

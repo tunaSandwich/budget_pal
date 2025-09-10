@@ -4,7 +4,7 @@ import { startOfMonth, endOfMonth, subMonths, formatISO } from 'date-fns';
 import { PlaidService } from './services/plaidService.js';
 import { CalculationService } from './services/calculationService.js';
 import { SmsService } from './services/smsService.js';
-import { logger } from './utils/logger.js';
+import { logger } from '../apps/schedular/utils/logger.js';
 
 dotenv.config();
 
